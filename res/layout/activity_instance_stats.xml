@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.iaasmobilemanager.InstanceStats" >
+
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="Reboot" />
+
+    <Button
+        android:id="@+id/btnTerminate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnStop"
+        android:layout_alignRight="@+id/btnStop"
+        android:layout_below="@+id/btnStop"
+        android:text="Terminate" />
+
+    <Button
+        android:id="@+id/btnReboot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnStop"
+        android:layout_alignLeft="@+id/btnStop"
+        android:layout_alignRight="@+id/btnStop"
+        android:text="Stop" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnReboot"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="21dp"
+        android:text="InstanceID" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="14dp"
+        android:text="PublicDNS" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="16dp"
+        android:text="PublicIP" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnReboot"
+        android:layout_alignLeft="@+id/btnReboot"
+        android:text="Running" />
+    
+    <ExpandableListView
+                android:id="@+id/lvExp"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/btnTerminate"
+                />
+
+    <TextView
+        android:id="@+id/lblInstanceID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/textView1"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/lblPublicDNS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/lblInstanceID"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/lblPublicIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignLeft="@+id/lblPublicDNS"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/lblRunning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignRight="@+id/lblPublicIP"
+        android:text="TextView" />
+
+</RelativeLayout>
