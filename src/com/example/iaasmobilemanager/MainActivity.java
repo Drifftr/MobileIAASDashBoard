@@ -18,8 +18,10 @@ import com.example.comtools.JSONUtils;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,16 +32,26 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = (Button) findViewById(R.id.button1);
-        button.setOnClickListener(new View.OnClickListener() {
+        
+    	Button createNew = (Button) findViewById(R.id.btnCreateNew);
+    	createNew.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_LONG).show();
-            	new Read().execute("");
+            	Intent i2 = new Intent(getApplicationContext(), CreateInstance.class);
+            	startActivity(i2);
             }
         });
-
+    	/*test.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+            	Intent i2 = new Intent(getApplicationContext(), InstanceStats.class);
+            	i2.putExtra("instanceID", "String ID here");
+            	startActivity(i2);
+			}
+		});*/
     }
 
+    
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
